@@ -1,14 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import base64
-
-#  creates a Flask application instance named app
-app = Flask(__name__)
-
-# class Data with attributes to hold image data
-class Data:
-    def __init__(self):
-        self.image_byte = None
-        self.image_base64 = None
+from src.models.models import Data
+from src.app.flask import app
 
 # Route for the index page
 @app.route('/')
