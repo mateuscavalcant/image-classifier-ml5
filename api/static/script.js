@@ -6,7 +6,6 @@ document.getElementById('uploadForm').addEventListener('submit', function (event
 function uploadFile() {
     const fileInput = document.getElementById('file');
     const file = fileInput.files[0];
-
     const formData = new FormData();
     formData.append('file', file);
 
@@ -20,7 +19,6 @@ function uploadFile() {
             }
             throw new Error('Error sending file');
         })
-
         .then(data => {
             console.log('Server response:', data);
             const imageElement = document.getElementById('image');
@@ -31,15 +29,12 @@ function uploadFile() {
             };
             imageElement.src = 'data:image/jpeg;base64,' + data.image;
         })
-
-
         .catch(error => {
             console.error('Error:', error);
         });
 }
 
 const classifier = ml5.imageClassifier('MobileNet');
-
 
 function gotResult(error, results) {
     const element = document.getElementById("result");
