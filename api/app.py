@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 import base64
 from models import Data
-from flask import app
+
+app = Flask(__name__)
 
 # Route for the index page
 @app.route('/')
