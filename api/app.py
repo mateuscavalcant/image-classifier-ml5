@@ -32,6 +32,6 @@ def upload_image():
         # Return an error message if image data couldn't be obtained
         return jsonify({'error': 'Erro ao obter a imagem do formulário'}), 400
 
-if __name__ == '__main__':
-    # Run the Flask application
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Run the Flask app
+    app.run(host='0.0.0.0', port=8765, debug=True, threaded=True)
